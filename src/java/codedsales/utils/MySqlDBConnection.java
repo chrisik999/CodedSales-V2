@@ -21,9 +21,9 @@ public class MySqlDBConnection implements DBConnection {
     //<editor-fold defaultstate="collapsed" desc="Mysql Database Connection">
     @Override
     public Connection connection() throws ClassNotFoundException, SQLException {
-        String URL = "jdbc:mysql://localhost:3306/codedsales?useSSL=false&serverTimezone=Africa/Lagos";
-        String USERNAME = "root";
-        String PASSWORD = "Mysql5250";
+        String URL = Config.MYSQLURL;
+        String USERNAME = Config.MYSQLUSERNAME;
+        String PASSWORD = Config.MYSQLPASSWORD;
         Class.forName("com.mysql.cj.jdbc.Driver");
         return DriverManager.getConnection(URL, USERNAME, PASSWORD);
     }

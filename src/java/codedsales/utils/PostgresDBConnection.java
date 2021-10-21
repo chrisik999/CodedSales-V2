@@ -22,9 +22,9 @@ public class PostgresDBConnection implements DBConnection {
      */
     @Override
     public  Connection connection() throws ClassNotFoundException, SQLException {
-        String URL = "jdbc:postgresql://localhost:5432/codedsales";
-        String USERNAME = "postgres";
-        String PASSWORD = "Postgres5250";
+        String URL = Config.PGURL;
+        String USERNAME = Config.PGUSERNAME;
+        String PASSWORD = Config.PGPASSWORD;
         Class.forName("org.postgresql.Driver");
         return DriverManager.getConnection(URL, USERNAME, PASSWORD);
     }
